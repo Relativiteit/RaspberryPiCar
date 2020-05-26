@@ -9,10 +9,10 @@ while True:
     # hue saturation value, different way to represent colours
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     #defining upper and lower yellow, first digit determines hue, to have a different colour use a different range for upper and lower
-    lower_yellow = np.array([10, 100, 100])
-    upper_yellow = np.array([60, 255, 255])
+    lower_blue  = np.array([60, 40, 40])
+    upper_blue  = np.array([150, 255, 255])
 
-    mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
+    mask = cv2.inRange(hsv, lower_blue, upper_blue)
     res = cv2.bitwise_and(frame, frame, mask = mask)
 
     kernel = np.ones((15,15), np.float32)/225
@@ -27,7 +27,7 @@ while True:
 
     cv2.imshow('frame', frame)
     cv2.imshow('mask', mask)
-    #cv2.imshow('res', res )
+    cv2.imshow('res', res )
     #cv2.imshow('smoothed', smoothed)
     #cv2.imshow('blur', blur)
     #cv2.imshow('median', median)
