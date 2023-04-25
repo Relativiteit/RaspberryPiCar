@@ -7,5 +7,5 @@ Project is build in python3.
 - refactor the code at some point make it object oriented, at tests with Pytest.
 - add images so it's easier to understand
 ## Filters
-
 - The scripts are different filters to use for the Picamera
+
